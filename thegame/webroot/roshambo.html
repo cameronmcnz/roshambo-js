@@ -10,14 +10,14 @@
    <body>
 
       Which one will it be?<br/>
-      <a href="#" onclick="playRoshambo('rock')"> rock </a>
-      <a href="#" onclick="playRoshambo('paper')"> paper </a>
+      <a href="#" onclick="playRoshambo('rock')"> rock </a>&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+      <a href="#" onclick="playRoshambo('paper')"> paper </a>&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
       <a href="#" onclick="playRoshambo('scissors')"> scissors </a>
 
       <br/><br/>
       <div id="results">Make your choice!!!</div>
 	  <br/>
-	  
+
 	  <table>
 	  <tr><th>WINS</th><th>LOSSES</th><th>TIES</th></tr>
 	  <tr>
@@ -25,10 +25,10 @@
 	  <td><div id="ties">0</div></td>
 	  <td><div id="losses">0</div></td></tr>
 	  </table>
-	  
+
 	  <br/>
 	  <div id="history"></div>
-	  
+
    </body>
 </html>
 
@@ -39,11 +39,11 @@ playRoshambo = function(clientGesture) {
    let gameSummary = gameService.playGame(clientGesture);
    let theScore = gameService.getScore();
    console.log("Here is the returned gs: " + gameSummary + " :---:");
-   document.getElementById('results').innerHTML = gameSummary.result; 
-   document.getElementById('wins').innerHTML = theScore.wins; 
-   document.getElementById('losses').innerHTML = theScore.losses; 
-   document.getElementById('ties').innerHTML = theScore.ties; 
-   
+   document.getElementById('results').innerHTML = gameSummary.result;
+   document.getElementById('wins').innerHTML = theScore.wins;
+   document.getElementById('losses').innerHTML = theScore.losses;
+   document.getElementById('ties').innerHTML = theScore.ties;
+
    renderGameHistory(gameService.getGameHistory());
 }
 renderGameHistory = function(gameHistory){
@@ -65,6 +65,6 @@ renderGameHistory = function(gameHistory){
 		console.log(output);
 	}
 	output = output + "</table>";
-	document.getElementById('history').innerHTML = output; 
+	document.getElementById('history').innerHTML = output;
 }
 </script>
